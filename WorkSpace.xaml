@@ -1,0 +1,937 @@
+﻿<UserControl x:Class="WpfApplication3.WorkSpace"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+             xmlns:local="clr-namespace:WpfApplication3"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="555*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <Grid.Background>
+            <ImageBrush ImageSource="img_fond/pexels-photo (3).jpg"/>
+        </Grid.Background>
+        
+        
+        <Grid x:Name="Menu_Grid" Background="#FF161A21"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="215*"/>
+                <ColumnDefinition Width="205*"/>
+                <ColumnDefinition Width="572*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="Logo" Grid.Column="0">
+                <TextBlock x:Name="textBloc" Foreground="#41b1e1" HorizontalAlignment="Left" FontFamily="Matura MT Script Capitals" Height="{Binding ActualHeight, ElementName=LOGO, Mode=OneWay}" Margin="29,10,0,4"  TextWrapping="Wrap" Text="Vir" VerticalAlignment="Center" FontSize="30" Width="{Binding ActualWidth, ElementName=LOGO, Mode=OneWay}"/>
+                <TextBlock x:Name="textBoc" HorizontalAlignment="left" Height="{Binding ActualHeight, ElementName=textBoc, Mode=OneWay}" FontFamily="Matura MT Script Capitals" Margin="75,26,0,0" TextWrapping="Wrap" FontSize="18" Foreground="#a2a3a3" Text="App" VerticalAlignment="Center" Width="75"/>
+
+            </Grid>
+
+            <Grid x:Name="Deconnection" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image x:Name="Logout_ico" Source="Image/Logout.ico" Stretch="Fill"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button x:Name="button" FontFamily="Segoe UI" VerticalAlignment="Center" Foreground="white" Content="| Deconnexion" HorizontalAlignment="Left" Height="30" Margin="0,10"  Width="122" BorderThickness="0" Click="Deconnexion">
+                        <Button.Background>
+                            <SolidColorBrush Color="#FFF7F7F7" Opacity="0.01"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+
+
+            </Grid>
+
+            <Grid x:Name="ESI" Grid.Column="2">
+
+            </Grid>
+
+        </Grid>
+        
+        
+        <Grid x:Name="Work" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="123*"/>
+                <ColumnDefinition Width="320*"/>
+                <ColumnDefinition Width="120*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="liste" Grid.Column="2" Background="#41b1e1">
+
+            </Grid>
+
+            <Grid x:Name="Choix" Grid.Column="0" Background="#FF1E1F1E">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="124*"/>
+                    <RowDefinition Height="41*"/>
+                    <RowDefinition Height="535*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="Utilisateur" Grid.Row="0" Background="#FF161A21">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Grid.Row="1">
+                            <Image Image.Source="Image/large (2).jpg"  />
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="1" >
+                        <Grid Grid.Column="1">
+                            <Menu x:Name="Utilisateur_Grid" Background="#FF161A21" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top"  Width="{Binding ActualWidth, ElementName=grid1, Mode=OneWay}">
+                                <MenuItem Header="Nom d'utilisateur " HorizontalAlignment="Left"  Background="#FF161A21" Foreground="white" Width="146"  >
+                                    <MenuItem Header="Mon compte" Background="#FF161A21" Foreground="white" Click="Mon_Compte" />
+                                    <MenuItem Header="Creer un compte simple utilisateur" Background="#FF161A21" Foreground="white" Click="Creer_Simple_Utilisateur"  />
+                                    <MenuItem Header="Supprimer un compte simple utilisateur" Background="#FF161A21" Foreground="white" Click="Supprimer_Simple_Utilisateur" />
+                                    <MenuItem Header="modifier un compte simple utilisateur" Background="#FF161A21" Foreground="white" Click="Modifier_Simple_Utilisateur"  />
+
+
+                                </MenuItem>
+                            </Menu>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid x:Name="MENU" Grid.Row="1">
+                    <TextBlock  Grid.Row="0" Foreground="White" FontSize="25" TextAlignment="Center" Text="Menu" Width="{Binding ActualWidth, ElementName=grid, Mode=OneWay}" >
+                        <TextBlock.Background>
+                            <SolidColorBrush Color="#FF0F7697" Opacity="0.5"/>
+                        </TextBlock.Background>
+                    </TextBlock>
+                </Grid>
+                <Grid x:Name="Fonctionalité" Grid.Row="2">
+
+                    <Grid Grid.Column="1">
+                        <DockPanel Grid.Row="1" Background="#FF26303C" >
+
+                            <ListBox DockPanel.Dock="Top" Background="#FF161A21" SelectionChanged="ListBox_SelectionChanged" >
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                         <Image Image.Source="Image/House-05.ico" Height="30" Width="30"></Image>
+                                         <Run Text="Accueil"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                         <Image Image.Source="Image/LiveJournal.png" Height="30" Width="30"></Image>
+                                         <Run Text="Demande de prime"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White" FontSize="18">
+                                        <Image Image.Source="Image/Chart-Customization.png" Height="30" Width="30"></Image>
+                                        <Run Text="Traitement des primes"/>
+
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                        <Image Image.Source="Image/Cheque-02.png" Height="30" Width="30"></Image>
+                                         <Run Text="Virement des primes"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                        <Image Image.Source="Image/Chart - 041.png" Height="30" Width="30"></Image>
+                                         <Run Text="Statistiques"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel>
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                        <Image Image.Source="Image/Data-Edit2.png" Height="30" Width="30"></Image>
+                                         <Run Text="Modifier les données"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                        <Image Image.Source="Image/Data-Add.png" Height="30" Width="30"></Image>
+                                        <Run Text="Ajouter des données"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+
+
+                                <ListBoxItem>
+                                    <StackPanel>
+
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                         <Image Image.Source="Image/LiveJournal.png" Height="30" Width="30"></Image>
+                                         <Run Text="Importation Excel"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </ListBoxItem>
+
+
+
+                                <ListBoxItem>
+                                    <StackPanel>
+                                        <TextBlock Foreground="White"  FontSize="18">
+                                        <Image Image.Source="Image/Cheque-02-WF2.png" Height="30" Width="30"></Image>
+                                         <Run Text="Batch"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ListBoxItem>
+                            </ListBox>
+                        </DockPanel>
+                    </Grid>
+
+                </Grid>
+            </Grid>
+            <Grid x:Name="accueil" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="77*"/>
+                    <ColumnDefinition Width="575*"/>
+                    <ColumnDefinition Width="125*"/>
+                </Grid.ColumnDefinitions>
+                
+
+                <Grid  Grid.Column="1" Grid.Row="1" Background="#FF161A21" Opacity="0.95" >
+                    <TextBlock x:Name="textBlock"  FontSize="25"  Foreground="#41b1e1" TextAlignment="Center" HorizontalAlignment="Center" Height="84" Margin="52,71,111,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" TextDecorations="{x:Null}" ><Run Text="Bienvenue sur VirApp "/></TextBlock>
+                    <TextBlock x:Name="textBlock1" FontSize="14" HorizontalAlignment="Center" Height="155" Margin="112,160,111,0" TextAlignment="Center"  Foreground="#a2a3a3" TextWrapping="Wrap" VerticalAlignment="Top" Width="352"><Run/><LineBreak/><Run/><LineBreak/><Run Text="VirApp est une application de gestion de virement destinée au service social et au service comptabilité de l'ESI"/></TextBlock>
+
+                </Grid>
+
+
+            </Grid>
+
+
+
+
+
+
+            <Grid x:Name="Traitement" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+               
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+
+
+                    <TabControl  Controls:TabControlHelper.IsUnderlined="True" Margin="0,-68,0,68">
+                        <TabItem  Header="Traitement Demandes" FontSize="10" Margin="0,0,1,-10" Height="42" VerticalAlignment="Bottom">
+                            <Grid x:Name="virement_tab">
+
+                                <Button x:Name="pv" Content="New PV" HorizontalAlignment="Left" Margin="333,438,0,0" VerticalAlignment="Top" Width="75" Click="PV_Click"/>
+                                <DataGrid x:Name="dataGrid1" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="49,19,0,0" Grid.Row="1" VerticalAlignment="Top" Height="400" Width="359" CellEditEnding="dataGrid1_CellEditEnding" >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="DEMANDE" Binding="{Binding Path=Demande}" IsReadOnly="True" />
+                                        <DataGridTextColumn Header="NOM" Binding="{Binding Path=NOM}" IsReadOnly="True" />
+                                        <DataGridTextColumn Header="PRENOM" Binding="{Binding Path=PRENOM}" IsReadOnly="True" />
+                                        <DataGridTextColumn Header="PRIME" Binding="{Binding Path=Prime}" IsReadOnly="True" />
+
+                                        <DataGridTemplateColumn Header="decision">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <ComboBox x:Name="decision" SelectedValuePath="Content" SelectionChanged="decision_SelectionChanged"  >
+                                                        <ComboBoxItem>A</ComboBoxItem>
+                                                        <ComboBoxItem>I</ComboBoxItem>
+                                                        <ComboBoxItem>R</ComboBoxItem>
+                                                    </ComboBox>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="motif" Binding="{Binding Path=Motif}" IsReadOnly="False"  />
+
+
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem  Header="Créer Virement" FontSize="10" Margin="-1,12,4,-12">
+                            <Grid Margin="-14,30,14,-30">
+                                <Label x:Name="label3" Content="N° PV" HorizontalAlignment="Left" Margin="91,147,0,0" VerticalAlignment="Top" Width="109" Height="33" FontSize="21.333"/>
+                                <Button x:Name="button1" Content="new virement" HorizontalAlignment="Left" Margin="91,201,0,0" VerticalAlignment="Top" Width="98" Click="button1_Click"/>
+                                <ComboBox x:Name="N_PV" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="298,154,0,0" VerticalAlignment="Top" Width="120"  />
+                                <TextBox x:Name="observation" HorizontalAlignment="Left" Height="23" Margin="298,201,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            </Grid>
+
+                        </TabItem>
+
+                    </TabControl>
+
+
+
+
+                </Grid>
+
+
+            </Grid>
+
+            <Grid x:Name="Modif_Data" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                </Grid>
+            </Grid>
+            <Grid x:Name="Ajouter_Data" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+               
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <TabControl Controls:TabControlHelper.IsUnderlined="True">
+                        <TabItem Header="Fonctionaires" FontSize="10">
+                            <Grid>
+                                <Label x:Name="pren_fonct" Content="Prenom" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,131,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="Nt" Content="Num Tel" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,271,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="mai" Content="Email" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,306,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="nom_fonct" Content="Nom" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,96,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="situ_fonct" Content="Situation familiale" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,201,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="date_recr" Content="Date de recrutement" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,166,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="retrait_fonct" Content="Retraité(e)" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,236,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Ntel" HorizontalAlignment="Left" Height="35" Margin="222,272,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+
+                                <TextBox x:Name="email" HorizontalAlignment="Left" Height="35" Margin="222,306,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <TextBox x:Name="prenom"  HorizontalAlignment="Left" Height="35" Margin="222,130,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <TextBox x:Name="nom" HorizontalAlignment="Left" Height="35" Margin="222,95,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <Label x:Name="cm" Content="Compte CCP" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,341,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="compte" HorizontalAlignment="Left" Height="35" Margin="222,341,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+
+                                <DatePicker x:Name="date" HorizontalAlignment="Left" Height="35" Margin="222,165,0,0" VerticalAlignment="Top" Width="234"/>
+                                <ComboBox x:Name="sitfam" HorizontalAlignment="Left" SelectedValuePath="Content" Height="35" Margin="222,200,-41,0" VerticalAlignment="Top" Width="300" SelectedIndex="0">
+                                    <ComboBoxItem>Mr</ComboBoxItem>
+                                    <ComboBoxItem>Mle</ComboBoxItem>
+                                    <ComboBoxItem>Mdm</ComboBoxItem>
+
+                                </ComboBox>
+                                <RadioButton x:Name="oui" Content="Oui" Foreground="#41b1e1"  Margin="279,245,182,333" Width="20" Height="20" Checked="oui_Checked" />
+                                <RadioButton Content="Non" Foreground="#41b1e1" Margin="363,245,98,333"  Width="20" Height="20" RenderTransformOrigin="-11.25,0.4" />
+                                <Button x:Name="Ajout_Fonct" Content="Ajouter" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="32" Margin="137,426,0,0" VerticalAlignment="Top" Width="187" Click="Ajout_Fonct_Click"/>
+                                <Label x:Name="mat" Content="Matricule"  FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,61,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1" RenderTransformOrigin="0.469,0.4"/>
+                                <TextBox x:Name="matricule" HorizontalAlignment="Left" Height="35" Margin="222,61,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <Label x:Name="b" Content="Banque"  FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,376,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1" RenderTransformOrigin="0.469,0.4"/>
+                                <TextBox x:Name="code" HorizontalAlignment="Left" Height="35" Margin="222,376,-41,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <Label x:Name="label" Content="Oui" HorizontalAlignment="Left" Margin="253,244,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="label1" Content="Non" HorizontalAlignment="Left" Margin="329,244,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.565"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Primes" FontSize="10">
+                            <Grid>
+                                <Label x:Name="Prime" Content=" Type de prime" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,130,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="Montant" Content="Montant de la prime" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,75,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="prim" HorizontalAlignment="Left" Height="35" Margin="237,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <TextBox x:Name="montan"  HorizontalAlignment="Left" Height="35" Margin="237,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <Button x:Name="Ajout_prime" Content="Ajouter" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="332,250,0,0" VerticalAlignment="Top" Width="205"/>
+
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Banque" FontSize="10" Height="42" VerticalAlignment="Bottom">
+                            <Grid>
+                                <Label x:Name="Des_banq" Content=" Designation banque" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,130,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <Label x:Name="Adr_banq" Content="Adresse banque" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="47,75,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Des_ban" HorizontalAlignment="Left" Height="35" Margin="237,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <TextBox x:Name="Adr_ban"  HorizontalAlignment="Left" Height="35" Margin="237,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                                <Button x:Name="Ajout_Banque" Content="Ajouter" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="332,250,0,0" VerticalAlignment="Top" Width="205"/>
+                            </Grid>
+                        </TabItem>
+
+                    </TabControl>
+                </Grid>
+            </Grid>
+            <Grid x:Name="Demande" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="img_fond/pexels-photo (3).jpg"/>
+                </Grid.Background>
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <TabControl x:Name="TabControl_Demande" Controls:TabControlHelper.IsUnderlined="True">
+                        <TabItem Header="Ajout demande">
+                            <Grid>
+
+                                <Label x:Name="Type_de_demande" Content="Type de prime" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,52,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <ComboBox  x:Name="Type_prime_demande" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="170" Cursor="Arrow"  Margin="282,60,0,0" Initialized="Type_demandes_Initialized" DropDownClosed="Type_prime_demande_DropDownClosed"/>
+                                <Label x:Name="Date_event" Content="Date evenement" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,106,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:DateTimeEdit x:Name="date_evenment" HorizontalAlignment="Left" Margin="315,114,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                                <Label x:Name="num_demande" Content="Demande N°" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,161,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:MaskedTextBox x:Name="Num_demande" FontSize="16" HorizontalAlignment="Left" Margin="282,161,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170" Height="34"  Initialized="Num_demande_Initialized" />
+                                <Label x:Name="nom_fonct_demande" Content="Nom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,215,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Nom_fonct_demande" HorizontalAlignment="Left" Height="36" Margin="282,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="Nom_fonct_demande_TextChanged"/>
+                                <Label x:Name="prenom_fonct_demande" Content="Prenom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36" Margin="103,269,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Prenom_fonct_demande" HorizontalAlignment="Left" Height="36" Margin="282,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+                                <Label x:Name="Date_de_demande" Content="Date demande" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36" Margin="103,315,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:DateTimeEdit x:Name="date_demande" HorizontalAlignment="Left" Margin="315,323,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                                <Button x:Name="Ajout_demande" Content="Ajouter" Background="White" Foreground="#41b1e1" BorderBrush="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="193,370,0,0" VerticalAlignment="Top" Width="205" Click="Ajout_demande_Click"/>
+
+
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Formulaire" FontSize="10">
+                            <Grid>
+                                <Label x:Name="Type_de_formulaire" Content="Type de prime" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="38,94,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <ComboBox  x:Name="Type_formulaire" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="170" Cursor="Arrow"  Margin="278,94,0,0" Initialized="Type_formulaire_Initialized"/>
+                                <Label x:Name="num_demande_formulaire" Content="Demande N°" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="38,153,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                                <syncfusion:MaskedTextBox x:Name="Num_demande_formulaire" HorizontalAlignment="Left" Margin="278,153,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170" Height="35" FontSize="18" MaxLength="5" Mask="00000" Initialized="Num_demande_formulaire_Initialized"/>
+                                <Button x:Name="Imprimer_formulaire" Content="Imprimer" HorizontalAlignment="Left" Width="76" VerticalAlignment="Top" Click="Imprimer_formulaire_Click" Margin="305,294,0,0"/>
+                                <Button x:Name="remplir_formulaire" Content="Remplir" HorizontalAlignment="Left"  Width="75" VerticalAlignment="Top" Click="remplir_formulaire_Click" Margin="207,294,0,0"/>
+
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem x:Name="Tab_Décès" Header="Décès" Visibility="Hidden">
+                            <Grid>
+                                <!-- Partie décès parent -->
+                                <Label x:Name="Type_de_deces" Content="Type de décès" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <ComboBox  x:Name="Type_deces" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="170" Cursor="Arrow"  Margin="282,13,0,0" DropDownClosed="Type_deces_DropDownClosed" Initialized="Type_deces_Initialized"/>
+                                <Label x:Name="Date_event_deces" Content="Date evenement" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,106,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1" Visibility="Hidden"/>
+                                <syncfusion:DateTimeEdit x:Name="date_evenment_deces" HorizontalAlignment="Left" Margin="315,114,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top" Visibility="Hidden"/>
+                                <Label x:Name="num_demande_deces" Content="Demande N°" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Visibility="Hidden" Height="34" Margin="103,161,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:MaskedTextBox x:Name="Num_demande_deces" FontSize="16" HorizontalAlignment="Left" Margin="282,161,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Visibility="Hidden" Width="170" Height="34" Text="{Binding Text,ElementName=Num_demande}" IsEnabled="False"/>
+                                <Label x:Name="nom_fonct_demande_deces" Content="Nom" FontSize="16" BorderThickness="2" Background="white" Foreground="#41b1e1" HorizontalAlignment="Left" Visibility="Hidden" Height="34" Margin="103,215,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Nom_fonct_demande_deces" HorizontalAlignment="Left" Height="36" Margin="282,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Visibility="Hidden"/>
+                                <Label x:Name="prenom_fonct_demande_deces" Content="Prenom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36" Visibility="Hidden" Margin="103,269,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Prenom_fonct_demande_deces" HorizontalAlignment="Left" Height="36" Margin="282,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Visibility="Hidden"/>
+                                <Label x:Name="Date_de_demande_deces" Content="Date demande" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Visibility="Hidden" Height="36" Margin="103,315,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:DateTimeEdit x:Name="date_demande_deces" HorizontalAlignment="Left" Margin="315,323,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top" Visibility="Hidden"/>
+                                <Button x:Name="Ajout_demande_deces_parent" Content="Ajouter" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="193,370,0,0" VerticalAlignment="Top" Visibility="Hidden" Width="205" Click="Ajout_demande_deces_parent_Click"/>
+
+                                <!--La partie décès de l'employée-->
+
+                                <Label x:Name="nom_demandeur_deces_employee" Content="Nom demandeur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left"  Height="34" Margin="103,86,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"   Visibility="Hidden"/>
+                                <TextBox x:Name="Nom_demandeur_deces_employee" HorizontalAlignment="Left" Height="34" Margin="282,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"   Visibility="Hidden" />
+                                <Label x:Name="prenom_demandeur_deces_employee" Content="Prenom demandeur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36"  Margin="103,125,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"   Visibility="Hidden"/>
+                                <TextBox x:Name="Prenom_demandeur_deces_employee" HorizontalAlignment="Left" Height="34" Margin="282,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"    Visibility="Hidden"/>
+                                <Label x:Name="sit_fam_demandeur_deces_employee" Content="Situation" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left"  Height="34" Margin="103,166,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"  Visibility="Hidden" />
+                                <ComboBox x:Name="Sit_fam_demandeur_deces_employee" HorizontalAlignment="Left"  Margin="282,168,0,0"  VerticalAlignment="Top" Width="170" Initialized="Sit_fam_demandeur_deces_employee_Initialized"   Visibility="Hidden" />
+                                <Label x:Name="nom_fonct_demande_deces_employee" Content="Nom fonctionnaire" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left"  Height="34" Margin="103,213,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"   Visibility="Hidden"/>
+                                <TextBox x:Name="Nom_fonct_demande_deces_employee" HorizontalAlignment="Left" Height="34" Margin="282,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"   Visibility="Hidden" />
+                                <Label x:Name="prenom_fonct_demande_deces_employee" Content="Prenom fonctionnaire" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36" Margin="103,247,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"  Visibility="Hidden" />
+                                <TextBox x:Name="Prenom_fonct_demande_deces_employee" HorizontalAlignment="Left" Height="34" Margin="282,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"    Visibility="Hidden"/>
+                                <Label x:Name="lien_parenté" Content="Lien de parenté" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left"  Height="34" Margin="103,291,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"   Visibility="Hidden"/>
+                                <ComboBox x:Name="Lien_parenté" HorizontalAlignment="Left"  Margin="282,294,0,0"  VerticalAlignment="Top" Width="170" Initialized="Lien_parenté_Initialized"    Visibility="Hidden"/>
+                                <Label x:Name="Date_event_deces_employee" Content="Date evenement" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,49,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"   Visibility="Hidden"/>
+                                <syncfusion:DateTimeEdit x:Name="date_evenment_deces_employee" HorizontalAlignment="Left" Margin="333,56,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"   Visibility="Hidden"/>
+                                <Label x:Name="num_demande_deces_employee" Content="Demande N°" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left"   Height="34" Margin="103,327,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1" Visibility="Hidden"/>
+                                <syncfusion:MaskedTextBox x:Name="Num_demande_deces_employee" FontSize="16" HorizontalAlignment="Left" Margin="282,329,0,0" TextWrapping="Wrap"  VerticalAlignment="Top"   Width="170" Height="34" Text="{Binding Text,ElementName=Num_demande}" IsEnabled="False"  Visibility="Hidden" />
+                                <Label x:Name="Date_de_demande_deces_employee" Content="Date demande" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left"   Height="36" Margin="103,361,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1" Visibility="Hidden"/>
+                                <syncfusion:DateTimeEdit x:Name="date_demande_deces_employee" HorizontalAlignment="Left" Margin="322,373,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"   Visibility="Hidden"/>
+                                <Button x:Name="Ajout_demande_deces_employee" Content="Ajouter" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="193,410,0,0" VerticalAlignment="Top"   Width="205" Visibility="Hidden" Click="Ajout_demande_deces_employee_Click"/>
+
+                            </Grid>
+                        </TabItem>
+
+
+                        <TabItem x:Name="Tab_Don" Header="Don" Visibility="Hidden">
+                            <Grid>
+                                <Label x:Name="Date_event_Don" Content="Date evenement" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,64,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:DateTimeEdit x:Name="date_evenment_Don" HorizontalAlignment="Left" Margin="315,71,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                                <Label x:Name="num_demande_Don" Content="Demande N°" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,118,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:MaskedTextBox x:Name="Num_demande_Don" FontSize="16" HorizontalAlignment="Left" Margin="282,118,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170" Height="34"  Text="{Binding Text,ElementName=Num_demande}" IsEnabled="False" />
+                                <Label x:Name="nom_fonct_demande_Don" Content="Nom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,173,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Nom_fonct_demande_Don" HorizontalAlignment="Left" Height="36" Margin="282,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+                                <Label x:Name="prenom_fonct_demande_Don" Content="Prenom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36" Margin="103,228,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <TextBox x:Name="Prenom_fonct_demande_Don" HorizontalAlignment="Left" Height="36" Margin="282,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+                                <Label x:Name="montant_don" Content="Montant du don" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="103,284,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:IntegerTextBox x:Name="Montant_don" FontSize="16" HorizontalAlignment="Left" Margin="282,284,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="170" Height="34" MaxValue="70000"/>
+                                <Label x:Name="Date_de_demande_Don" Content="Date demande" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="36" Margin="103,333,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                <syncfusion:DateTimeEdit x:Name="date_demande_Don" HorizontalAlignment="Left" Margin="315,341,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                                <Button x:Name="Ajout_demande_Don" Content="Ajouter" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="186,386,0,0" VerticalAlignment="Top" Width="205" Click="Ajout_demande_Don_Click"/>
+
+                            </Grid>
+                        </TabItem>
+
+
+
+                    </TabControl>
+
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="Virement" Grid.Column="1" Visibility="Hidden">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <TabControl Controls:TabControlHelper.IsUnderlined="True">
+
+                        <TabItem Header="Etat" FontSize="10">
+                            <Grid>
+                                <ComboBox x:Name="combo"  SelectedValuePath="Content" HorizontalAlignment="Left" Margin="251,117,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="comboBox_DropDownOpened"/>
+                                <Label x:Name="label4" Content="N° Virement"  HorizontalAlignment="Left" Margin="76,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.289,1.192" Width="161" Height="26"/>
+                                <Label x:Name="N_chèque" Content="Chèque N°" FontSize="16" BorderThickness="2" Background="#FF1E1F1E" Foreground="#80ba45" HorizontalAlignment="Left" Height="36" Margin="67,168,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF80BA45"/>
+                                <syncfusion:MaskedTextBox x:Name="NumCheque" HorizontalAlignment="Left"  Margin="251,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="35" Mask="0000000" FontSize="18"/>
+                                <Label x:Name="date_du_cheque" Content="Date du chèque" FontSize="16" BorderThickness="2" Background="#FF1E1F1E" Foreground="#80ba45" HorizontalAlignment="Left" Height="36" Margin="67,226,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF80BA45"/>
+                                <syncfusion:DateTimeEdit x:Name="date_cheque" HorizontalAlignment="Left" Margin="287,234,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top" RenderTransformOrigin="0.556,-0.111"/>
+                                <Button x:Name="Remplir_etat_vir" Content="Remplir" HorizontalAlignment="Left" Margin="251,317,0,0" VerticalAlignment="Top" Width="75" Cursor="Hand" Click="EtatVir1_Click"/>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Avis et Ordre">
+                            <Grid>
+                                <Label x:Name="lName" Content="Nom" FontSize="16" BorderThickness="2" Background="#FF1E1F1E" Foreground="#80ba45" HorizontalAlignment="Left" Height="36" Margin="76,90,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF80BA45"/>
+                                <TextBox x:Name="LName" HorizontalAlignment="Left" Height="24" Margin="274,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                                <Label x:Name="Pren" Content="Prenom" FontSize="16" BorderThickness="2" Background="#FF1E1F1E" Foreground="#80ba45" HorizontalAlignment="Left" Height="36" Margin="76,158,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF80BA45"/>
+                                <TextBox x:Name="name" HorizontalAlignment="Left" Height="22" Margin="274,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                                <Label x:Name="date_avis" Content="Date du virement" FontSize="16" BorderThickness="2" Background="#FF1E1F1E" Foreground="#80ba45" HorizontalAlignment="Left" Height="36" Margin="76,222,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF80BA45"/>
+                                <syncfusion:DateTimeEdit x:Name="Date_avis" HorizontalAlignment="Left" Margin="297,234,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                                <Button x:Name="Remplir" Content="Remplir" HorizontalAlignment="Left" Margin="226,318,0,0" VerticalAlignment="Top" Width="75" Click="Remplir_Click"/>
+
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Liste" FontSize="10">
+                            <Grid>
+                                <Label x:Name="num_pv" Content="VIREMENT N°" FontSize="16" BorderThickness="2" Background="#FF1E1F1E" Foreground="#80ba45" HorizontalAlignment="Left" Height="36" Margin="62,169,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF80BA45"/>
+
+                                <Button x:Name="RempListe" Content="Remplir" HorizontalAlignment="Left" Margin="216,272,0,0" VerticalAlignment="Top" Width="76" Click="RempListe_Click"/>
+                                <ComboBox x:Name="comboBox" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="283,179,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="comboBox_DropDownOpened_1"/>
+                            </Grid>
+                        </TabItem>
+
+                    </TabControl>
+                </Grid>
+
+
+
+            </Grid>
+
+            <Grid x:Name="Statistiques" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+               
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+
+                    <ComboBox x:Name="type_graphe" HorizontalAlignment="Left" Margin="280,135,0,0" VerticalAlignment="Top" Width="120" Initialized="type_graphe_Initialized"/>
+                    <Label x:Name="type_de_graphe" Content="Type de graphe" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="59,126,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                    <syncfusion:DateTimeEdit x:Name="date_debut_satats" HorizontalAlignment="Left" Margin="304,196,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                    <syncfusion:DateTimeEdit x:Name="date_fin_satats" HorizontalAlignment="Left" Margin="304,250,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+                    <Label x:Name="date_de_debut_satats" Content="Date de début" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="59,185,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                    <Label x:Name="date_de_fin_satats" Content="Date de fin" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="35" Margin="59,239,0,0" VerticalAlignment="Top" Width="175" BorderBrush="#41b1e1"/>
+                    <Button x:Name="affiche_stats" Content="Afficher" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="40" Margin="155,338,0,0" VerticalAlignment="Top" Width="205" Click="affiche_stats_Click"/>
+
+                </Grid>
+            </Grid>
+
+
+            <Grid x:Name="ExcelImport" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="img_fond/pexels-photo (3).jpg"/>
+                </Grid.Background>
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Button x:Name="Parcourir_excel" Content="Parcourir" HorizontalAlignment="Left" Margin="341,38,0,0" VerticalAlignment="Top" Width="74" Click="btnOpen_Click" />
+                        <TextBox  IsEnabled="False" x:Name="txtFilePath" HorizontalAlignment="Left" Height="25" Margin="67,28,0,28"  VerticalAlignment="Center" Width="250" RenderTransformOrigin="0.5,0.5"/>
+                    </Grid>
+                    <Grid Grid.Row="1" x:Name="dtGrid_Grid">
+                        <DataGrid AutoGenerateColumns="True" IsReadOnly="True" x:Name="dtGrid" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+
+                        <Button x:Name="Import_excel" Content="Importer" HorizontalAlignment="Left" Margin="213,10,0,0" VerticalAlignment="Top" Width="74" Height="25" Initialized="Import_excel_Initialized" Click="Import_excel_Click"/>
+                        <Button x:Name="Next_table" Content="Prochaine Table" HorizontalAlignment="Left" Margin="318,10,0,0" VerticalAlignment="Top" Width="104" Height="25" Click="Next_table_Click" Initialized="Next_table_Initialized"/>
+                        <Button x:Name="Previous_table" Content="Table précédente" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" Width="108" Height="25" Click="Previous_table_Click" Initialized="Previous_table_Initialized"/>
+                        <TextBox x:Name="SheetNumber" IsEnabled="False" HorizontalAlignment="Left" Height="24" Margin="265,46,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50"/>
+                        <Label x:Name="sheetNumber" Content="Table N°" HorizontalAlignment="Left" Margin="190,46,0,0" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="Tables_BDD" HorizontalAlignment="Left" Margin="229,77,0,0" VerticalAlignment="Top" Width="120" Initialized="Tables_BDD_Initialized"/>
+                        <Label x:Name="tables_bdd" Content="La Table à importer" HorizontalAlignment="Left" Margin="92,77,0,0" VerticalAlignment="Top"/>
+
+
+
+                    </Grid>
+
+
+                </Grid>
+
+            </Grid>
+
+
+
+
+            <Grid x:Name="Batch" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                </Grid>
+            </Grid>
+            
+            
+            <!--DEBUT PARTIE CHIHEB-->
+
+
+            <Grid x:Name="Liste" Grid.Column="2" Background="#41b1e1">
+                <Label x:Name="label2" Content="liste de demande en cours" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.632,-1.192" Width="159"/>
+                <Button x:Name="list" Content="new liste" HorizontalAlignment="Left" Margin="145,514,0,0" VerticalAlignment="Top" Width="75" Click="list_Click"/>
+
+            </Grid>
+            <DataGrid x:Name="dataGrid" Grid.Column="2" AutoGenerateColumns="False" IsReadOnly="True"  HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Height="463" Width="210"
+                   CanUserAddRows="False"  >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Path=Nom}" />
+                    <DataGridTextColumn Header="Prenom" Binding="{Binding Path=Prenom}" />
+                    <DataGridTextColumn Header="Prime" Binding="{Binding Path=Prime}" />
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+
+
+
+            <!--FIN PARTIE CHIHEB-->
+
+            <Grid x:Name="CreerSimpleUser" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="443*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Background="#FF161A21">
+                        <TextBlock x:Name="Titre1" HorizontalAlignment="Left"  Height="80" Margin="42,0,0,10" TextWrapping="Wrap" Foreground="white" TextAlignment="Center" FontSize="30" Text="Créer un compte simple utilisateur" VerticalAlignment="Center" Width="455"/>
+
+                    </Grid>
+                    <Grid  Grid.Row="3" Background="White" >
+                        <Label x:Name="Nom_" Content="Nom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="79,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                        <TextBox x:Name="Nom_b" HorizontalAlignment="Left" Height="34" Margin="314,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" LostFocus="Nom_b_LostFocus" />
+                        <Label x:Name="Prenom_" Content="Prenom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="79,67,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                        <TextBox x:Name="Prenom_b" HorizontalAlignment="Left" Height="34" Margin="314,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" LostFocus="Prenom_b_LostFocus" />
+                        <Label x:Name="NomUtilisateur_" Content="Nom d'utilisateur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="79,127,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                        <TextBox x:Name="NomUtilisateur_b" HorizontalAlignment="Left" Height="34" Margin="314,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" LostFocus="NomUtilisateur_b_LostFocus" />
+                        <Label x:Name="MotPasse_" Content="Mot de passe" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="79,187,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                        <PasswordBox x:Name="MotPass_b" HorizontalAlignment="Left" Height="34" Margin="314,187,0,0"  VerticalAlignment="Top" Width="271" />
+                        <Label x:Name="MotPasse_Conf" Content="Confirmer le MDP" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="79,243,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                        <PasswordBox x:Name="MotPass_bConf" HorizontalAlignment="Left" Height="34" Margin="314,243,0,0"  VerticalAlignment="Top" Width="271" LostFocus="MotPass_bConf_LostFocus" />
+                        <Button x:Name="CreerSimpleUtilisateur" IsEnabled="False" Content="Créer" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="207,307,0,0" VerticalAlignment="Top"   Width="140" Visibility="Visible" Click="CreerSimpleUtilisateur_Click" />
+                        <TextBlock x:Name="MessageErreur" HorizontalAlignment="Left"  Height="20" Margin="79,282,0,95" TextWrapping="Wrap" Foreground="Red" TextAlignment="Left" FontSize="10" Text="Les mots de passe sont pas identiques, veuillez reconfirmer votre mot de passe." VerticalAlignment="Center" Width="455" Visibility="Hidden"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid x:Name="MonCompte" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="443*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Background="#FF161A21">
+                        <TextBlock x:Name="Titre" HorizontalAlignment="Left"  Height="60" Margin="114,25,0,0" TextWrapping="Wrap" Foreground="white" TextAlignment="Center" FontSize="30" Text="Modifier Mon compte" VerticalAlignment="Center" Width="455"/>
+
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TabControl Margin="0, 10, 0, 0" Grid.Row="1" FontSize="10" TabStripPlacement="Left">
+                            <TabItem Header="Nom" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Nom_utilisateur" Content="Nom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="Nom_box" HorizontalAlignment="Left" Height="34" Margin="219,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" />
+                                    <Button x:Name="Enreg" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="120,71,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+
+
+
+                            </TabItem>
+                            <TabItem Header="Prenom" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Prenom_utilisateur" Content="Prenom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="prenom_box" HorizontalAlignment="Left" Height="34" Margin="204,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" />
+                                    <Button x:Name="Enreg1" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="110,75,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Nom d'utilisateur" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Login_utilisateur" Content="Nom d'utilisateur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="Login_box" HorizontalAlignment="Left" Height="34" Margin="209,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" />
+                                    <Button x:Name="Enreg2" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="100,75,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Mot de passe" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Actuel" Content="Actuel" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <Label x:Name="Nouveau" Content="Nouveau" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,66,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <Label x:Name="Confirmer" Content="Confirmer" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,126,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="Actuel_box" HorizontalAlignment="Left" Height="34" Margin="204,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" />
+                                    <TextBox x:Name="Nouveau_box" HorizontalAlignment="Left" Height="34" Margin="204,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" />
+                                    <TextBox x:Name="confirmer_box" HorizontalAlignment="Left" Height="34" Margin="204,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" />
+                                    <Button x:Name="Enreg3" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="104,186,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+                            </TabItem>
+
+                        </TabControl>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid x:Name="SuppSimpleUser" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="443*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Background="#FF161A21">
+                        <TextBlock x:Name="Titre2" HorizontalAlignment="Left"  Height="60" Margin="114,32,0,8" TextWrapping="Wrap" Foreground="white" TextAlignment="Center" FontSize="30" Text="Supprimer un compte simple utilisateur" VerticalAlignment="Center" Width="535"/>
+
+                    </Grid>
+                    <Grid  Grid.Row="3" Background="White" >
+                        <Label x:Name="supp_" Content="Simple Utilisateur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="79,92,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="34" Margin="279,92,0,0" VerticalAlignment="Top" Width="210"/>
+                        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="40" Margin="29,27,0,0" TextWrapping="Wrap" FontSize="13" Text="Selectionner le simple utilisateur que vous voullez supprimer" VerticalAlignment="Top" Width="410"/>
+                        <Button x:Name="Supprimer" Content="Supprimer" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="279,172,0,0" VerticalAlignment="Top"   Width="210" Visibility="Visible" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid x:Name="ModifSimpleUser" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="120*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+              
+                <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.95">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="123*"/>
+                        <RowDefinition Height="373*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Background="#FF161A21">
+                        <TextBlock x:Name="Titre3" HorizontalAlignment="Left"  Height="60" Margin="114,32,0,8" TextWrapping="Wrap" Foreground="white" TextAlignment="Center" FontSize="30" Text="Modifier un compte simple utilisateur" VerticalAlignment="Center" Width="535"/>
+
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Label x:Name="choix_" Content="Simple Utilisateur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="224,54,0,0" VerticalAlignment="Top" Width="180" BorderBrush="#41b1e1"/>
+                        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Height="34" Margin="444,54,0,0" VerticalAlignment="Top" Width="230" />
+                        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" FontSize="13" Text="Selectionner le simple utilisateur que vous voullez Modifier" VerticalAlignment="Top" Width="410"/>
+
+                    </Grid>
+                    <Grid  Grid.Row="3" Background="White" >
+                        <TabControl Margin="0, 10, 0, 0" Grid.Row="1" FontSize="10" TabStripPlacement="Left">
+                            <TabItem Header="Nom" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Nom_simple" Content="Nom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="189" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="Nom_Simple" HorizontalAlignment="Left" Height="34" Margin="219,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" />
+                                    <Button x:Name="Enreg_simple" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,87,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+
+
+
+                            </TabItem>
+                            <TabItem Header="Prenom" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Prenom_simple" Content="Prenom" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="189" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="prenomsimple_box" HorizontalAlignment="Left" Height="34" Margin="204,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" />
+                                    <Button x:Name="Enreg1_simple" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,77,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Nom d'utilisateur" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Login_simple" Content="Nom d'utilisateur" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="189" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="Loginsimple_box" HorizontalAlignment="Left" Height="34" Margin="209,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" />
+                                    <Button x:Name="Enreg2_simple" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,78,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Mot de passe" FontSize="10">
+                                <Grid>
+                                    <Label x:Name="Actuel_simple" Content="Actuel" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <Label x:Name="Nouveau_simple" Content="Nouveau" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,66,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <Label x:Name="Confirmer_simple" Content="Confirmer" FontSize="16" BorderThickness="2" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="0,126,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#41b1e1"/>
+                                    <TextBox x:Name="Actuel_box_simple" HorizontalAlignment="Left" Height="34" Margin="204,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" />
+                                    <TextBox x:Name="Nouveau_box_simple" HorizontalAlignment="Left" Height="34" Margin="204,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" />
+                                    <TextBox x:Name="confirmer_box_simple" HorizontalAlignment="Left" Height="34" Margin="204,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" />
+                                    <Button x:Name="Enreg3_simple" Content="Enregistrer Les modifications" Background="White" Foreground="#41b1e1" HorizontalAlignment="Left" Height="34" Margin="104,186,0,0" VerticalAlignment="Top"   Width="189" Visibility="Visible" Click="Ajout_demande_deces_employee_Click"/>
+                                </Grid>
+                            </TabItem>
+
+                        </TabControl>
+
+
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+        <Grid x:Name="App_Grid" Grid.Row="2" Background="#FF161A21" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+
+            </Grid>
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock x:Name="textBlock11"  Height="20" Margin="10,10,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="9" Foreground="#a2a3a3" Text="2016©VirApp" VerticalAlignment="Center" Width="112"/>
+
+            </Grid>
+            <Grid x:Name="grid" Grid.Column="2">
+                <TextBlock x:Name="textBlock8" Foreground="#a2a3a3" HorizontalAlignment="Left" FontFamily="Matura MT Script Capitals"  Margin="36,10,0,14"  TextWrapping="Wrap" Text="Vir" Opacity="0.5" VerticalAlignment="Center" FontSize="30"  />
+                <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" FontFamily="calibri" Margin="94,24,-30,10" TextWrapping="Wrap" FontSize="18" Opacity="0.5" Foreground="#a2a3a3" Text="App" VerticalAlignment="Center" Width="116" Height="30" />
+                <Image x:Name="jj_png" Margin="99,-4,5,0" Opacity="0.5" Height="auto" Width="auto" Source="Image/LogoG.png" Stretch="Fill"   />
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

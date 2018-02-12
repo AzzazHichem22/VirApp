@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfApplication3.Stats"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:WpfApplication3"
+        mc:Ignorable="d"
+        Title="Stats" Height="600" Width="800">
+    
+    <Grid x:Name="statWindow">
+        <Grid.Background>
+            <ImageBrush ImageSource="img_fond/LM.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <syncfusion:MenuAdv HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=statWindow, Mode=OneWay}">
+            <syncfusion:MenuItemAdv Header="Exit" Click="MenuItemAdv_Click" />
+
+            <syncfusion:MenuItemAdv Header="Statistiques">
+                <syncfusion:MenuItemAdv Header="Diagramme"  Click="Reports_click1"  />
+                <syncfusion:MenuItemAdv Header="Anneau" Click="MenuItemAdv_Click_1" />
+            </syncfusion:MenuItemAdv>
+            <syncfusion:MenuItemAdv/>
+        </syncfusion:MenuAdv>
+
+        <Grid x:Name="Refresh" Grid.Row="1">
+
+            <Button x:Name="button" Content="Refrsh"  VerticalAlignment="Center" Width="75" Click="button_Click" HorizontalAlignment="Center"/>
+            <syncfusion:DateTimeEdit x:Name="date_debut" HorizontalAlignment="Left" Margin="204,12,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+            <syncfusion:DateTimeEdit x:Name="date_fin" HorizontalAlignment="Left" Margin="494,12,0,0" TextWrapping="Wrap" Text="DateTimeEdit" VerticalAlignment="Top"/>
+
+        </Grid>
+
+        <Grid x:Name="gridStats" Grid.Row="2">
+
+
+            <local:Diagram x:Name="sourceDiagram"/>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
